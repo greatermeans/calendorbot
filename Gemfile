@@ -8,5 +8,4 @@ gem 'require_all'
 gem 'rspec'
 gem 'pry-byebug'
 gem 'rake'
-gem 'sqlite3'
 
