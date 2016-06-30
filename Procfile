@@ -1,1 +1,1 @@
-bot: ruby telegram.rb
+bot: ruby telegrambot.rb
