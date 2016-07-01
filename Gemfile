@@ -1,8 +1,8 @@
 
 source "https://rubygems.org"
 
-gem 'activerecord'
-gem 'sinatra-activerecord'
+# gem 'activerecord'
+# gem 'sinatra-activerecord'
 gem 'require_all'
 # gem 'rake'
 gem 'telegram-bot-ruby', :require=>'telegram/bot'
