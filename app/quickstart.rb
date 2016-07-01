@@ -4,7 +4,7 @@ require 'google/apis/calendar_v3'
 require 'googleauth'
 require 'fileutils'
 
-OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
+OOB_URI = 'mycalendor.herokuapp.com' #'urn:ietf:wg:oauth:2.0:oob'
 APPLICATION_NAME = 'Google Calendar API Ruby Quickstart'
 CLIENT_SECRETS_PATH = 'client_secret.json'
 CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
