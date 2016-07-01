@@ -14,8 +14,8 @@ Telegram::Bot::Client.run(token) do |bot|
       
       bot.api.send_message(chat_id: message.chat.id, parse_mode: 'HTML',
                            text: "Open the following URL in the browser and enter the resulting code after authorization")
-      # bot.api.send_message(chat_id: message.chat.id, parse_mode: 'HTML',
-      #                      text: "#{GoogleCalendar.authorize}")
+      bot.api.send_message(chat_id: message.chat.id, parse_mode: 'HTML',
+                           text: "#{GoogleCalendar.authorize}")
       # # @user = User.find_or_create_by(id: message.id)
       authorized = false
     end
