@@ -3,8 +3,8 @@ require 'telegram/bot'
 require_relative 'quickstart.rb'
 require_relative 'event.rb'
 
-# token = '223993681:AAFeNe87yW5ZuGS9qE79MwXxxPbnL_o0jq8'
-token = '230814713:AAGYq_ec5aj__jWSyPvEHzxUqohSevIc-PU'
+token = '223993681:AAFeNe87yW5ZuGS9qE79MwXxxPbnL_o0jq8'
+# token = '230814713:AAGYq_ec5aj__jWSyPvEHzxUqohSevIc-PU'
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
