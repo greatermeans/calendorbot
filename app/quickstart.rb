@@ -1,4 +1,4 @@
-# 
+#
 require 'googleauth/stores/file_token_store'
 require 'google/apis/calendar_v3'
 require 'googleauth'
@@ -21,48 +21,62 @@ SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR
 
 class GoogleCalendar
 
+  attr_reader :url
+
   def self.authorize
     FileUtils.mkdir_p(File.dirname(CREDENTIALS_PATH))
-
-    client_id = Google::Auth::ClientId.from_file(CLIENT_SECRETS_PATH)
+    client_id = "IPDwWjUWIi3NSVBE-FO0tn7T"
     token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
-    authorizer = Google::Auth::UserAuthorizer.new(
-    client_id, SCOPE, token_store)
-    user_id = 'default'
-    credentials = authorizer.get_credentials(user_id)
+    @authorizer = Google::Auth::UserAuthorizer.new(
+    "IPDwWjUWIi3NSVBE-FO0tn7T", Google::Apis::CalendarV3::AUTH_CALENDAR, token_store)
+    @user_id = 'default'
+    credentials = @authorizer.get_credentials(@user_id)
     if credentials.nil?
-      url = authorizer.get_authorization_url(
-      base_url: OOB_URI)
+      get_url
+      # @url = authorizer.get_authorization_url(
+      # base_url: OOB_URI)
       # Telegram::Bot::Client.api.send_message(chat_id: message.chat.id, parse_mode: 'HTML',
       #     text: "whattt")
-      puts "Open the following URL in the browser and enter the " +
-        "resulting code after authorization"
-      puts url
-      code = gets
-      credentials = authorizer.get_and_store_credentials_from_code(
-      user_id: user_id, code: code, base_url: OOB_URI)
+      # puts "Open the following URL in the browser and enter the " +
+      #   "resulting code after authorization"
+      # puts @url
+      # code = gets
+      # credentials = authorizer.get_and_store_credentials_from_code(
+      # user_id: user_id, code: code, base_url: OOB_URI)
     end
-    credentials
+    # credentials
+  end
+
+  def self.get_url
+    @url = @authorizer.get_authorization_url(base_url: OOB_URI)
   end
 
 
-  def initialize
-  # Initialize the API
-  @service = Google::Apis::CalendarV3::CalendarService.new
-  @service.client_options.application_name = APPLICATION_NAME
-  @service.authorization = authorize
-
-  # Fetch the next 10 events for the user
-  @calendar_id = 'primary'
-  # @calendar_id = 'flatironschool.com_15ii6if4tou9co9iido53p6cbs@group.calendar.google.com'
+  def self.get_credentials
+    @credentials = authorizer.get_and_store_credentials_from_code(
+      user_id: user_id, code: code, base_url: OOB_URI)
   end
 
   def self.get_items(day)
+    api_initial
     @day=day
     time(day)
     calendar_items
     cal_items.empty? ? "No upcoming events found" : cal_items
   end
+
+  def self.api_initial
+    # Initialize the API
+    @service = Google::Apis::CalendarV3::CalendarService.new
+    @service.client_options.application_name = APPLICATION_NAME
+    @service.authorization = authorize
+
+    # Fetch the next 10 events for the user
+    # @calendar_id = 'primary'
+    @calendar_id = 'flatironschool.com_15ii6if4tou9co9iido53p6cbs@group.calendar.google.com'
+  end
+
+
 
   def self.add_event
     event = Google::Apis::CalendarV3::Event.new(

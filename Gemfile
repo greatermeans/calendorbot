@@ -1,7 +1,6 @@
 
 source "https://rubygems.org"
 
-gem 'pg'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'require_all'
@@ -12,3 +11,12 @@ gem 'google-api-client', :require=>'google/apis/calendar_v3'
 gem 'fileutils'
 gem 'googleauth'
 gem 'signet'
+
+group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
