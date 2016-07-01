@@ -114,6 +114,7 @@ DEPENDENCIES
   pg
   rake
   require_all
+  signet
   sinatra-activerecord
   telegram-bot-ruby
 
