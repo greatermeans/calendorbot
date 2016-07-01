@@ -1,4 +1,4 @@
-require 'telegram/bot'
+# require 'telegram/bot'
 require_relative 'quickstart.rb'
 require_relative 'event.rb'
 

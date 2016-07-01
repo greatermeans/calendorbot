@@ -6,5 +6,5 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'require_all'
 gem 'rake'
-gem 'telegram/bot'
+gem 'telegram-bot-ruby', :require=>'telegram/bot'
 
