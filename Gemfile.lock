@@ -1,26 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (4.2.6)
-      activesupport (= 4.2.6)
-      builder (~> 3.1)
-    activerecord (4.2.6)
-      activemodel (= 4.2.6)
-      activesupport (= 4.2.6)
-      arel (~> 6.0)
-    activesupport (4.2.6)
-      i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
-      minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
-      tzinfo (~> 1.1)
     addressable (2.4.0)
-    arel (6.0.3)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
-    builder (3.2.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     descendants_tracker (0.0.4)
@@ -50,9 +35,7 @@ GEM
       signet (~> 0.7)
     httpclient (2.8.0)
     hurley (0.2)
-    i18n (0.7.0)
     ice_nine (0.11.2)
-    json (1.8.3)
     jwt (1.5.4)
     little-plugger (1.1.4)
     logging (2.1.0)
@@ -62,14 +45,10 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    minitest (5.9.0)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     os (0.9.6)
     pg (0.18.4)
-    rack (1.6.4)
-    rack-protection (1.5.3)
-      rack
     representable (2.3.0)
       uber (~> 0.0.7)
     require_all (1.3.3)
@@ -80,22 +59,12 @@ GEM
       faraday (~> 0.9)
       jwt (~> 1.5)
       multi_json (~> 1.10)
-    sinatra (1.4.7)
-      rack (~> 1.5)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
-    sinatra-activerecord (2.0.9)
-      activerecord (>= 3.2)
-      sinatra (~> 1.0)
     sqlite3 (1.3.11)
     telegram-bot-ruby (0.5.2)
       faraday
       virtus
     thor (0.19.1)
     thread_safe (0.3.5)
-    tilt (2.0.5)
-    tzinfo (1.2.2)
-      thread_safe (~> 0.1)
     uber (0.0.15)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -107,14 +76,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
   fileutils
   google-api-client
   googleauth
   pg
   require_all
   signet
-  sinatra-activerecord
   sqlite3
   telegram-bot-ruby
 
