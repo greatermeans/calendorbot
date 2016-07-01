@@ -22,8 +22,7 @@ SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR
 class GoogleCalendar
 
   attr_reader :url
-authorizer = Google::Auth::UserAuthorizer.new(
-   client_id, SCOPE, token_store)
+
   def self.authorize
     FileUtils.mkdir_p(File.dirname(CREDENTIALS_PATH))
     client_id = Google::Auth::ClientId.from_file(CLIENT_SECRETS_PATH)
