@@ -1,4 +1,7 @@
 require 'googleauth/stores/file_token_store'
+require 'google/apis/calendar_v3'
+require 'googleauth'
+require 'fileutils'
 
 OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
 APPLICATION_NAME = 'Google Calendar API Ruby Quickstart'
