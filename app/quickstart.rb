@@ -1,3 +1,4 @@
+# 
 require 'googleauth/stores/file_token_store'
 require 'google/apis/calendar_v3'
 require 'googleauth'
@@ -44,6 +45,8 @@ class GoogleCalendar
     credentials
   end
 
+
+  def initialize
   # Initialize the API
   @service = Google::Apis::CalendarV3::CalendarService.new
   @service.client_options.application_name = APPLICATION_NAME
@@ -52,7 +55,7 @@ class GoogleCalendar
   # Fetch the next 10 events for the user
   @calendar_id = 'primary'
   # @calendar_id = 'flatironschool.com_15ii6if4tou9co9iido53p6cbs@group.calendar.google.com'
-
+  end
 
   def self.get_items(day)
     @day=day
